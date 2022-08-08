@@ -1,0 +1,48 @@
+USER
+
+GET localhost:8000/api/user          -> barcha userlarni oladi
+
+PRODUCT
+
+GET localhost:8000/api/product                -> barcha productlarni oladi
+GET localhost:8000/api/product/{id}           -> bitta productni id'si bo'yicha qidiradi
+POST localhost:8000/api/product               -> product qo`shadi                        -> body => product schema
+PUT localhost:8000/api/product/{id}           -> productni id'si bo'yicha yangiledi      -> body => product schema
+PUT localhost:8000/api/product/reduce/{id}    -> productni quantity'sini kamaytiradi     -> body => { "quantity": 3 }
+DELETE localhost:8000/api/product/{id}        -> productni id'si bo'yicha o'chiradi
+
+SOLD
+
+GET localhost:8000/api/sold          -> barcha soldlarni oladi
+GET localhost:8000/api/sold/{id}     -> bitta soldni id'si bo'yicha qidiradi
+POST localhost:8000/api/sold         -> sold qo`shadi                            -> body => sold schema
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+USER SCHEMA
+
+{
+    "fullname": "Abror shokirov",
+    "phone": "+998905368833",
+    "username": "admin",
+    "password": "admin"
+}
+
+PRODUCT SCHEMA
+
+{
+    "name": "Anor",
+    "price": "24000",
+    "quantity": 5,
+    "unity": "kg",
+    "image": "1.jpg",
+}
+
+SOLD SCHEMA
+
+{
+    "name": "Olma",
+    "price": "20000",
+    "quantity": 2,
+    "image": "2.jpg",
+}
